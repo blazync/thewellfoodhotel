@@ -5,25 +5,8 @@ import { useUser } from "@clerk/nextjs";
 import { DataTable } from "./data-table";
 import axios from "axios";
 import AdminLayout from "@/app/AdminLayout";
-type MyBookingsProps = {
-  id: string;
-  email: string;
-  roomName: string;
-  startDate: string;
-  endDate: string;
-  startTime: string;
-  endTime: string;
-  hours: number;
-  days: number;
-  breakFastIncluded: boolean;
-  dinnerIncluded: boolean;
-  lunchIncluded: boolean;
-  currency: string;
-  paymentId: string;
-  orderId: string;
-};
 
-export const MyBookings: React.FC<MyBookingsProps> = () => {
+const MyBookings = () => {
   const [data, setData] = useState<Booking[]>([]);
   const { user } = useUser();
   useEffect(() => {
